@@ -1,0 +1,565 @@
+:root {
+    --teal: #006B6B;
+    --light-teal: #009E9E;
+    --yellow: #FCCF14;
+    --blue: #063C5E;
+    --grey: #C2C2C2;
+    --white: #FFFFFF;
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box; 
+    background: linear-gradient(#FFFFFF, #009E9E,#006B6B);
+    font-size: 1.4rem;
+}
+
+/* PART 1 */
+/* NAVBAR STYLING */
+.codesquad-comics-logo {
+    width: 300px;
+    margin-left: 10%;
+}
+
+nav {
+    background-color:var(--blue);
+    height: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-list {
+    list-style:none;
+    width: 35%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-list li {
+    padding: 0 0.5rem;
+}
+
+/* FOOTER  STYLING */
+.codesquad-logo-b {
+    width: 220px;
+}
+
+footer {
+    background-color: var(--blue);
+    color: var(--yellow);
+    padding: 1% 0 3% 1%;
+    border-top: solid 6px var(--yellow);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-address {
+    color: var(--white);
+}
+
+.follow-us-container a {
+    font-size: larger;
+    padding-right: 14%;
+}
+
+/* LINK STYLING */
+nav a,
+footer a {
+    color: var(--white);
+}
+
+nav a:link,
+footer a:link,
+nav a:visited,
+footer a:visited {
+    text-decoration: none;
+}
+
+nav a:hover,
+footer a:hover {
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+nav a:active,
+footer a:active {
+    color: var(--blue);
+    background-color: var(--yellow);
+}
+
+/* UNIV. STYLING */
+main,
+section {
+    background-size: cover;
+    background-color: var(--white);
+    margin: 5%;
+    padding: 5%;
+    border: solid 5px var(--blue);
+}
+
+main h1,
+main h2,
+section h1 {
+    color: var(--blue);
+    text-align: center;
+}
+
+main h1,
+main h2,
+section h1,
+nav,
+footer {
+    font-family: 'Fredericka the Great', serif;
+}
+
+.about-text,
+.about-list,
+.admin-table,
+.create-comic-form,
+.index-text,
+.index-comic-collection,
+.login-form,
+.update-comic-form,
+.comic-card-bottom {
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.create-comic-form,
+.login-form,
+.update-comic-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.create-comic-synopsis,
+.update-comic-synopsis {
+    font-family: courier;
+    vertical-align: top;
+}
+
+/* ABOUT STYLING */
+.about-list {
+    display: table;
+    margin: 4rem auto 1rem auto;
+}
+
+.about-text {
+    margin: 4rem 0 5rem 0 ;
+}
+/* ADMIN STYLING */
+.admin-table {
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 4%;
+    border: 2px solid var(--blue);
+    border-collapse: collapse;  
+}
+
+.admin-new-comic-button {
+   margin: 3rem 0;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   bottom: 10px;
+}
+
+.admin-button {
+    background-color: var(--yellow);
+    color: var(--blue);
+    font-size: large;
+}
+
+.admin-table th {
+    background-color: var(--grey);
+    text-align: center;
+    padding: 0.5rem 1.8rem;
+    border: 2px solid var(--blue);
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: var(--grey);
+}
+
+.admin-table td {
+    padding: 1% 1% 1% 2%;
+    border: 2px solid var(--blue);
+}
+
+.admin-edit-button {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 0.2rem 22%;
+}
+
+.admin-delete-button {
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 0.2rem 15%;
+}
+
+.admin-edit-button,
+.admin-delete-button {
+    display: block;
+    font-size: large;
+}
+
+/* CREATE STYLING */
+.create-comic-form>div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8%;
+}
+
+.create-formfield input[type="text"],
+.create-formfield input[type="number"],
+.create-formfield select,
+.create-formfield textarea {
+    margin-left: 0.4rem;
+    flex-grow: 3;
+    flex-shrink: 0;
+    flex-basis: 150px;
+}
+
+.create-formfield label {
+    text-align: right;
+    flex-grow: 2;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+.create-submit-button {
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 2px 2%;
+    cursor: pointer;
+    margin: 0 50%;
+}
+
+/* INDEX STYLING */
+.index-comic-collection {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.index-comic {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 200px;
+    margin: 1.5%;
+}
+
+.index-button {
+    margin-top: 5%;
+    background-color: var(--yellow);
+    color: var(--blue);
+    text-align: center;
+    position: relative;
+    left: 42%;
+}
+
+a.index-details:link,
+a.index-details:visited {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+a.index-details:hover {
+    color: var(--teal);
+    font-weight: bold;
+}
+a.index-details:active {
+    color: var(--blue);
+    font-weight: bold;
+    background-color: var(--yellow);
+}
+
+.index-comic-cover {
+    width: 200px;
+}
+
+a.index-details a:hover {
+    color: var(--teal);
+    font-weight: bold;
+}
+
+/* LOGIN STYLING */
+.login-submit-button {
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 4px 2%;
+    cursor: pointer;
+    margin: 0 45%;
+}
+
+.login-form>div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.login-field input[type=email],
+.login-field input[type=password] {
+    flex-grow: 3;
+    flex-shrink: 0;
+    flex-basis: 150px;
+}
+
+.login-field label {
+    text-align: right;
+    margin-right: 0.5rem;
+    flex-grow: 0.5;
+    flex-shrink: 0;
+    flex-basis: 150px;
+}
+
+/* UPDATE STYLING */
+.update-comic-form>div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8%;
+}
+
+.update-formfield input[type="text"],
+.update-formfield input[type="number"],
+.update-formfield select,
+.update-formfield textarea {
+    margin-left: 0.4rem;
+    flex-grow: 4;
+    flex-shrink: 0;
+    flex-basis: 150px;
+}
+
+.update-formfield label {
+    text-align: right;
+    flex-grow: 3.5;
+    flex-shrink: 0;
+    flex-basis: 0;
+
+}
+
+.update-comic-button {
+    background-color: var(--yellow);
+    color: var(--blue);
+    padding: 0.5% 3%;
+    cursor: pointer;
+    margin: 4% 45% 0 45%;
+}
+
+/* COMIC CARD STYLING */
+/* FUN HOME */
+.comic-card {
+    margin: 20%;
+    padding: 0;
+}
+
+.comic-card-top {
+    background-color: var(--blue);
+    min-height: 33em;
+    padding-top: 2%;
+    border: solid var(--yellow);
+    border-radius: 5vw 5vw 0 0;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.comic-card-header {
+    width: 90%;
+    font-family: 'Fredericka the Great', serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--yellow);
+    font-size: 2rem;
+}
+
+.comic-card-cover {
+    width: 60%;
+    border: solid var(--white);
+    border-radius: 5vw;
+}
+
+.comic-card-bottom {
+    padding: 5%;
+    border: solid var(--yellow);
+    border-top: 1px;
+    border-radius: 0 0 5vw 5vw;
+    background-color: white;
+}
+
+.comic-card-span {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+/* tablet and mobile size */
+    .navbar-list {
+        display: none;
+    }
+
+    .fa-bars {
+        display: block;
+        margin-right: 5%;
+        color: var(--white);
+    }
+
+    .codesquad-comics-logo {
+        width: 200px;
+    }
+
+    footer {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer>div {
+        margin-left: 2%;
+    }
+
+    .follow-us-container a {
+        padding-right: 3%;
+        font-size: x-large;
+    }
+
+    .codesquad-logo-b {
+        width: 180px;
+    }
+
+    main,
+    section,
+    form {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    /* mobile sizing */
+    .table {
+        overflow-x:auto;  
+    }
+
+    button {
+        font-size: smaller;
+    }
+
+    .index-comic-cover {
+        width: 150px;
+    }
+
+    .index-button {
+        position: relative;
+        left: 30%;
+    }
+
+   .comic-card {
+    font-size: 0.9rem;
+    margin: 10%;
+   }
+   
+    .comic-card-top {
+        min-height: 22rem;
+        border: solid 4px var(--yellow);
+        border-radius: 10vw 10vw 0 0;
+    }
+
+    .comic-card-header {
+        font-size: 1rem;
+    }
+
+    .comic-card-cover {
+        /* margin-top: 5%; */
+        width: 70%;
+        border: solid var(--white);
+        border-radius: 10vw;
+    }
+
+    .comic-card-bottom {
+        padding: 5% 8% 5% 8%;
+        border-radius: 0 0 10vw 10vw;
+        border: solid 4px var(--yellow);
+        border-top: 1px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* desktop styling */
+    .fa-bars {
+        display: none !important;
+    }
+
+    .comic-card {
+        font-size: 0.8rem;
+        margin: 10%;
+        display: flex;
+    }
+
+    .comic-card-top {
+        border: solid 4px var(--yellow);
+        border-right: 0;
+        border-radius: 5vw 0 0 5vw;
+    }
+
+    .comic-card-bottom {
+        border: solid 4px var(--yellow);
+        border-left: 0;
+        border-radius: 0 5vw 5vw 0;
+    }
+
+    .comic-card-header {
+        font-size: 1rem;
+    }
+
+    .comic-card-cover {
+        width: 75%;
+        margin: 3% 0 5% 0;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .fa-bars {
+        display: none !important;
+    }
+
+    .comic-card {
+        font-size: 0.8rem;
+        margin: 10%;
+        display: flex;
+    }
+
+    .comic-card-top {
+        border: solid 4px var(--yellow);
+        border-right: 0;
+        border-radius: 5vw 0 0 5vw;
+    }
+
+    .comic-card-bottom {
+        border: solid 4px var(--yellow);
+        border-left: 0;
+        border-radius: 0 5vw 5vw 0;
+    }
+
+    .comic-card-header {
+        font-size: 1.2rem;
+        width: 90%;
+    }
+
+    .comic-card-cover {
+        width: 75%;
+        margin: 3% 0 5% 0;
+    }
+}
