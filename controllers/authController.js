@@ -17,7 +17,7 @@ const loginLocalFailed = (request, response, next) => {
 
 // logoutRequest
 const logoutRequest = (request, response, next) => {
-    logout(err => {
+    request.logout(err => {
         if (err) {
             response.status(400).json({
                 error: {
@@ -49,38 +49,36 @@ const signupRequest = async (request, response, next) => {
             firstName,
             lastName,
             username,
-            password: hashedPassword
+            password: hashedPassword,
+            googleId: "",
         });
         try {
             await newUser.save();
             
-            // login the user after signing up
-            request.login(newUser, (err) => {
+             // login the user after signing up
+             request.login(newUser, (err) => {
                 if (err) {
-                    return response.status(400).json({
-                        error: {
-                            message: "Something went wrong while signing up!",
-                            statusCode: 400
-                        }
+                    response.status(400).json({
+                        error: {message: "Something went wrong while signing up!"},
+                        statusCode: 400,
                     });
                 }
-                response.status(200).json({
-                    success: {
-                        message: "User signed up successfully!",
-                        statusCode: 200
-                    }
+                response.status(201).json({
+                    success: { message: "User signed up successfully!" },
+                    data: { firstName, lastName, username },
+                    statusCode: 201,
                 });
             });
         } catch (err) {
-            if (err.code === 11000 && err.keyPattern && err.keyPattern.username) {
-                return response.status(400).json({
+            if (err.code === 11000 && err.keyPattern.username) {
+                response.status(400).json({
                     error: {
                         message: "Username already exists",
                         statusCode: 400
                     }
                 });
             } else {
-                return response.status(500).json({
+                response.status(500).json({
                     error: {
                         message: "Internal server error",
                         statusCode: 500

@@ -12,14 +12,14 @@ const router = express.Router();
 
 router.post(
     "/login/local",
-    passport.authenticate("local", {failureRedirect: "/login.local/failed"}),
+    passport.authenticate("local", {failureRedirect: "/login/local/failed"}),
     (request, response, next) => {
         response.status(200).json({
             success: {message: "User logged in."},
             data: {
-                userName,
-                firsName,
-                lastName,
+                userName: request.user.username,
+                firsName: request.user.firstName,
+                lastName: request.user.lastName,
             },
             statusCode: 200,
         })
@@ -37,7 +37,7 @@ router.get("/logout", logoutRequest);
 router.post("/signup", signupRequest);
 
 // GET to the path of /login/github
-router.get("/login.github", passport.authenticate("github"));
+router.get("/login/github", passport.authenticate("github"));
 
 // GET to the path of /login/github/failed
 router.get("/login/github/failed", (request, response, next) => {

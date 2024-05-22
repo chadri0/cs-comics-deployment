@@ -1,35 +1,30 @@
 // dependencies/packages
-require("dotenv").config();
-require("./config/connection");
-require("./config/authStrategy");
+require("dotenv").config(); 
+require("./config/connection"); 
+require("./config/authStrategy"); 
 const express = require("express");
 const morgan = require("morgan");
 const path = require("node:path");
 const app = express();
 const PORT = process.env.PORT || 3000;
-const session = require("express-session");
-const passport = require("passport");
-const cors = require("cors");
-const helmet = require("helmet");
-
-//CCS-3 define routing variables
-const bookRoutes = require("./routes/bookRoutes");
-const authRoutes = require("./routes/authRoutes"); //commented out as per instructions
+const cors = require("cors"); 
+const helmet = require("helmet"); 
+const session = require("express-session"); 
+const passport = require("passport"); 
 
 // middleware
 app.use(morgan("dev"));
 
-//use the public directory
-app.use(express.static(path.join(__dirname, "public")));
+//CCS-3 define routing variables
+const bookRoutes = require("./routes/bookRoutes");
+const authRoutes = require("./routes/authRoutes");
 
-// use cors
-app.use(cors);
 
-// encode forms
-app.use(express.urlencoded({ extended: false }));
-
-// use json 
+app.use(cors());
+app.use(helmet());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname + "/public")));
 
 // use helmet
 app.use(

@@ -1,7 +1,7 @@
 {
-  "name": "course-project-chadri0",
+  "name": "cs-comics-deployment",
   "version": "1.0.0",
-  "description": "\"CodeSquad Comics\"",
+  "description": "<div id=\"top\"></div>",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,16 +16,12 @@
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "helmet": "^7.1.0",
-    "mongodb": "^6.6.1",
-    "mongoose": "^8.3.4",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
     "morgan": "^1.10.0",
     "passport": "^0.7.0",
     "passport-github": "^1.1.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.0",
-    "uuid": "^9.0.1"
   }
 }

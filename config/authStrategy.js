@@ -14,24 +14,22 @@ const User = require("../models/userModel");
 
 // implement local strategy
 passport.use(
-    new LocalStrategy(function verify(username, password, done) {
-        User.findOne({username:username})
-        .then((user) => {
+    new LocalStrategy(
+        (verify = (username, password, done) => {
+        User.findOne({ username: username }).then((user) => {
             if (!user) {
-                return done(null, false, {message: "User not found"});
+            return done(null, false, { message: "User not found" });
             }
             bcrypt.compare(password, user.password, (error, result) => {
-                console.log("result, result");
-                if (error) {
-                    return done(error);
-                }
-                return done(null, user);
+            
+            if (error) {
+                return done(error);
+            }
+            return done(null, user);
             });
-        })
-        .catch((error) => {
-            console.log(`There was an error finding the user from database: ${error}`);
         });
-    })
+        })
+    )
 );
 
 // implement github strategy
@@ -50,7 +48,7 @@ passport.use(new GithubStrategy({ //container to use the strategy
 passport.use(new GoogleStrategy({ 
     clientID: process.env.GOOGLE_CLIENT_ID, 
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/admin"
+    callbackURL: "https://cs-comics-deployment-1.onrender.com/auth/google/admin"
     },
     (accessToken, refreshToken, profile, done) => { 
         console.log(profile); 

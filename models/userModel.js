@@ -19,6 +19,9 @@ const userSchema = new mongoose.Schema({
     password: {
         type: Buffer,
     },
+    googleId: {
+        type: String,
+    },
     salt: {
         type: Buffer,
     },
